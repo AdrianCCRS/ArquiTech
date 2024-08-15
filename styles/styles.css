@@ -1,21 +1,27 @@
+:root{
+    --dark-color: #141414;
+    --light-color: #fff;
+}
+
 body {
     font-family: Arial, sans-serif;
     font-size: 12px;
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--dark-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     flex:1;
+    color: var(--light-color)
 }
 
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
-    background: #fff;
+    background: var(--dark-color);
     padding: 20px;
 }
 
