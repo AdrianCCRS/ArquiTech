@@ -1,6 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+@import url(./reset.css) layer(reset);
+
+@layer reset;
+
 :root{
-    --dark-color: #141414;
+    --dark-color: rgb(16 16 16 / 100%);
+    --black-color: #000;
+    --card-bg-color: rgba(39, 39, 41, 0.39);
     --light-color: #fff;
+    --outline-color: #858585;
+    --font-color: #dbd7d7;
+    --main-font: 'Radio Canada Big', sans-serif;
+    --dark-blue: #032449;
+    --light-blue: #35b5cc;
+}
+
+i{
+    font-style: italic;
+}
+
+b{
+    color: var(--light-blue)
 }
 
 body {
@@ -9,61 +29,184 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
-    background-color: var(--dark-color);
+    background-color: var(--black-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     flex:1;
-    color: var(--light-color)
+    color: var(--font-color);
+    font-family: var(--main-font);
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from{
+        transform: translateY(10%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+#integrantes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
-    background: var(--dark-color);
+    background: var(--black-color);
     padding: 20px;
+    overflow: visible;
 }
 
 h1, h2 {
     text-align: center;
-    color: #333;
+    color: var(--font-color);
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+.title{
+    background-image: linear-gradient(to right, var(--dark-blue), var(--light-blue));
+    background-clip: text;
+    color: transparent;
+    background-size: 300%;
+    animation: gradAnimation 3s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes gradAnimation {
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 100%;
+    }
 }
 
 .integrante {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    height: fit-content;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
+    gap: 15px;
+    outline: var(--dark-color) solid 1px;
+    border: rgba(0, 132, 255, 0.192) solid 1px;
+    background-color: rgba(39, 39, 41, 0.39);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 .integrante img {
-    border-radius: 50%;
-    margin-right: 20px;
+    border-radius: 10px;
+    aspect-ratio: 3/4;
+    max-width: 8rem;
+    object-fit: cover;
+    object-position: right;
+    outline: solid 1px var(--light-color);
+    position: relative;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+
+.integrante img:hover {
+    transform: scale(1.5) translateY(-5%);
+    transition: transform 0.3s ease;
+    outline-color: rgba(0, 132, 255, 0.192);
 }
 
 .info-integrante {
-    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    padding-bottom: 1%;
 }
 
 .info-integrante h3 {
     margin: 0;
-    color: #555;
+    color: var(--font-color);
+    font-size: 1.5rem;
 }
 
 .info-integrante p {
     margin: 5px 0;
+    font-size: 0.9rem;
 }
 
-.info-integrante a {
-    color: #007BFF;
-    text-decoration: none;
-}
 
-.info-integrante a:hover {
-    text-decoration: underline;
+.extra-integrante{
+    display: flex;
+    width: 100%;
+    height: auto;
+
+    & ul{
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap:2%;
+
+        & li{
+            display: flex;
+            flex-direction: column;
+            min-width: 10%;
+            max-width: 30%;
+            padding: 0 1%;
+            align-items: center;
+            outline: var(--dark-color) solid 1px;
+            border: rgb(255 255 255 / 10%) solid 1px;
+            background-color: rgba(39, 39, 41, 0.39);
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        & li:nth-of-type(1){
+            & p:nth-child(2){
+                position: absolute;
+                top: 25%;
+            }
+
+            & p:nth-child(2){
+                font-size: 4rem;
+            }
+        }
+
+        & li:nth-of-type(2){
+            max-width: 40%;
+        }
+
+        & li:nth-of-type(4){
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            & svg{
+                transition: scale 0.3s ease, stroke 0.3s ease;
+            }
+
+            & svg:hover{
+                scale: 1.2;
+                stroke: var(--light-blue)
+            }
+        }
+
+    }
 }
 
 .footer {
