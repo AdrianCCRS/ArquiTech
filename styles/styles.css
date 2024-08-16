@@ -107,6 +107,16 @@ h2{
     background-color: rgba(39, 39, 41, 0.39);
     backdrop-filter: blur(10px);
     box-sizing: border-box;
+    animation: moveShadow 1.3s infinite linear alternate-reverse;
+}
+
+@keyframes moveShadow {
+    from {
+        box-shadow: 5px 5px 5px 0 rgba(0, 132, 255, 0.192);
+    }
+    to {
+        box-shadow: 5px 5px 20px 0 rgba(0, 132, 255, 0.192);
+    }
 }
 
 .integrante img {
