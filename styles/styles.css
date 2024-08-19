@@ -15,6 +15,10 @@
     --light-blue: #35b5cc;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 i{
     font-style: italic;
 }
@@ -30,6 +34,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--black-color);
+    height: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -37,31 +42,6 @@ body {
     color: var(--font-color);
     font-family: var(--main-font);
     animation: fadeUp 1s ease;
-}
-
-@keyframes fadeUp {
-    from{
-        transform: translateY(10%);
-    }
-    to{
-        transform: translateY(0);
-    }
-}
-
-#integrantes{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 0;
-}
-
-.container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-    background: var(--black-color);
-    padding: 20px;
-    overflow: visible;
 }
 
 h1, h2 {
@@ -75,6 +55,234 @@ h1{
 
 h2{
     font-size: 2rem;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    background-color: var(--dark-color);
+}
+
+.rotate-md{
+    transform: rotate(180deg);
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5%;
+
+    .logo{
+        width: auto;
+        height: 100%;
+    }
+    
+    .logo-container{
+        width:25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        box-sizing: border-box;
+        gap: 10px;
+
+        .logo-title{
+            font-size: 2.5rem;
+            transition: transform 0.3s ease;
+
+            &::after{
+                content: 'Tech';
+                color: var(--light-blue);
+                display: inline-block;
+                transition: inherit;
+            }
+        }
+
+        &:hover .logo-title {
+            transform: translateY(10%);
+        }
+
+        &:hover .logo-title::after{
+            transform: translateY(-20%);
+        }
+    }
+
+    .menu{
+        display: flex;
+        gap: 20px;
+        width: 49%;
+        height: 100%;
+        justify-content: center;
+        
+        > a {
+            color: var(--font-color);
+            font-size: 1.3rem;
+            height: 100%;
+            transition: transform 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &::before{
+                content: '';
+                position: absolute;
+                width: 10%;
+                height: 3.5px;
+                bottom: 0;
+                right: 90%;
+                background-image: linear-gradient(to right, var(--dark-blue), var(--light-blue));
+                transition: right 0.2s ease, width 0.2s ease 0.2s;
+                opacity: 0;
+            }
+            
+            &:hover{
+                &::before{
+                    right: 0;
+                    width: 100%;
+                    opacity: 1;
+                    animation: intermittent 0.8s infinite alternate-reverse;
+                }
+            }
+        }
+
+        .dropdown{
+            position: relative;
+            -webkit-user-select: none;
+            user-select: none;
+            .practices-menu{
+                position: absolute;
+                width: 150%;
+                height: min-content;
+                z-index: 1;
+                background-color: rgb(44, 49, 53);
+                bottom: 0px;
+                left: 0;
+                top:100%;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                transform: translateY(10px);
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility 0.2s, transform 0.2s, opacity 0.2s;
+
+                & li{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1rem;
+                    gap: 10px;
+                    padding: 5px;
+                    opacity: 0;
+                    transform: translateY(10px);
+                    transition: opacity 0.5s, transform 0.5s;
+                    
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 10%;
+                        height: 2px;
+                        bottom: 0;
+                        right: 90%;
+                        background-image: linear-gradient(to right, var(--dark-blue), var(--light-blue));
+                        transition: right 0.2s ease, width 0.2s ease 0.2s;
+                        opacity: 0;
+                    }
+                    
+                    &:hover{
+                        &::before{
+                            right: 0;
+                            width: 100%;
+                            opacity: 1;
+                            animation: intermittent 0.8s infinite alternate-reverse;
+                        }
+                    }
+                }
+            }
+        }
+
+        .practices-menu-appear{
+            visibility: visible !important;
+            transform: translateY(0px) !important;
+            opacity: 1 !important;
+
+            & li{
+                opacity: 1 !important;
+                transform: translateY(0px) !important;
+            }
+        }
+
+        .active{
+
+            &::before{
+                opacity: 1;
+                right: inherit;
+                width: 100%;
+            }
+
+            &:hover::before{
+                animation-iteration-count: 0;
+            }
+        }
+    }
+
+    .repo{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .repo-btn{
+        width: auto;
+        height:50%;
+        aspect-ratio: 16/6;
+        border-radius: 10px;
+        background-color: #292323;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+
+        & svg{
+            transition: transform 0.3s ease, stroke 0.3s ease;}
+    }
+
+    .repo-btn:hover{
+        background-color: var(--light-blue);
+        color: var(--dark-blue);
+
+        & svg{
+            transform: rotate(360deg);
+            stroke: var(--dark-blue);
+        }
+    }
+}
+
+@keyframes intermittent{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+.container {
+    max-width: 100%;
+    overflow: hidden;
+    background: var(--black-color);
+    padding-inline: 5%;
+    margin-top: 5%;
+    overflow: visible;
 }
 
 .title{
@@ -157,7 +365,6 @@ h2{
     font-size: 0.9rem;
 }
 
-
 .extra-integrante{
     display: flex;
     width: 100%;
@@ -225,4 +432,15 @@ h2{
     background: #333;
     color: white;
     margin-top: 20px;
+}
+
+#integrantes{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+#dropdown-row{
+    transition: transform 0.1s;
 }
