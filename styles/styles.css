@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url(./reset.css) layer(reset);
 
 @layer reset;
@@ -6,13 +7,17 @@
 :root{
     --dark-color: rgb(16 16 16 / 100%);
     --black-color: #000;
+    --gray-color: #2d2d2d;
     --card-bg-color: rgba(39, 39, 41, 0.39);
     --light-color: #fff;
     --outline-color: #858585;
     --font-color: #dbd7d7;
     --main-font: 'Radio Canada Big', sans-serif;
-    --dark-blue: #032449;
+    --secondary-font: 'Anton', sans-serif;
+    --dark-blue: #041529;
     --light-blue: #35b5cc;
+    --blue-gradient: linear-gradient(to right, transparent,  var(--dark-blue), var(--light-blue), transparent);
+    --blue-title-gradient: linear-gradient(to right, var(--dark-blue), var(--light-blue));
 }
 
 html{
@@ -41,7 +46,6 @@ body {
     flex:1;
     color: var(--font-color);
     font-family: var(--main-font);
-    animation: fadeUp 1s ease;
 }
 
 h1, h2 {
@@ -134,15 +138,13 @@ header{
                 width: 10%;
                 height: 3.5px;
                 bottom: 0;
-                right: 90%;
                 background-image: linear-gradient(to right, var(--dark-blue), var(--light-blue));
-                transition: right 0.2s ease, width 0.2s ease 0.2s;
+                transition: right 0.2s ease, width 0.2s ease;
                 opacity: 0;
             }
             
             &:hover{
                 &::before{
-                    right: 0;
                     width: 100%;
                     opacity: 1;
                     animation: intermittent 0.8s infinite alternate-reverse;
@@ -244,7 +246,7 @@ header{
         height:50%;
         aspect-ratio: 16/6;
         border-radius: 10px;
-        background-color: #292323;
+        background-color: var(--gray-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -275,7 +277,6 @@ header{
     }
 }
 
-
 .container {
     max-width: 100%;
     overflow: hidden;
@@ -286,14 +287,23 @@ header{
 }
 
 .title{
-    background-image: linear-gradient(to right, var(--dark-blue), var(--light-blue));
+    background-image: var(--blue-title-gradient);
     background-clip: text;
     color: transparent;
     background-size: 300%;
-    animation: gradAnimation 3s infinite ease-in-out alternate-reverse;
+    animation: gradTitleAnimation 2s infinite ease-in-out alternate-reverse;
 }
 
 @keyframes gradAnimation {
+    0% {
+        background-position: 0%;
+    }
+    0% {
+        background-position: 500%;
+    }
+}
+
+@keyframes gradTitleAnimation {
     from {
         background-position: 0%;
     }
@@ -309,23 +319,20 @@ header{
     height: fit-content;
     padding: 10px;
     border-radius: 10px;
-    gap: 15px;
+    gap: 25px;
     outline: var(--dark-color) solid 1px;
     border: rgba(0, 132, 255, 0.192) solid 1px;
     background-color: rgba(39, 39, 41, 0.39);
     backdrop-filter: blur(10px);
     box-sizing: border-box;
-    animation: moveShadow 1.3s infinite linear alternate-reverse;
+    box-shadow: 5px 5px 5px 0 rgba(0, 132, 255, 0.192);
+    opacity: 0;
+    animation: show 1s linear forwards;
+    animation-timeline: view();
+    animation-iteration-count: 1;
+    animation-range: entry;
 }
 
-@keyframes moveShadow {
-    from {
-        box-shadow: 5px 5px 5px 0 rgba(0, 132, 255, 0.192);
-    }
-    to {
-        box-shadow: 5px 5px 20px 0 rgba(0, 132, 255, 0.192);
-    }
-}
 
 .integrante img {
     border-radius: 10px;
@@ -426,12 +433,136 @@ header{
     }
 }
 
+.separator{
+    width: 100%;
+    height: 2px;
+    background-image: var(--blue-gradient);
+    background-size: 500%;
+    animation: gradAnimation 20s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block: 5rem;
+    
+
+    h1{
+        background-color: var(--black-color);
+        border-radius: 20%;
+        width: 320px;
+    }
+}
+
+#practices{
+    width: 100%;
+    min-height: 50vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: row dense;
+    grid-auto-columns: 1fr;
+    gap: 15px;
+    perspective: 700px;
+    opacity: 0;
+    animation: show 1s linear forwards;
+    animation-timeline: view();
+    animation-iteration-count: 1;
+    animation-range: entry;
+
+
+    & .practice {
+        background-color: var(--dark-color);
+        outline: var(--dark-color) solid 1px;
+        border: var(--dark-blue) solid 1px;
+        max-width: max-content;
+        max-height: min-content;
+        border-radius: 10px;
+        transform-style: preserve-3d;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 2px 2px 15px 0 rgba(0, 132, 255, 0.192);
+
+        & h2{
+            color: white;
+            font-size: 2rem;
+            width: 100%;
+            text-align: center;
+            background-color: var(--dark-blue);
+            border-radius: 10px 10px 0 0;
+        }
+
+        & p{
+            color: rgb(146, 146, 146);
+            font-size: 1rem;
+            padding: 10px;
+            max-height: 55%;
+            min-height: 55%;
+        }
+
+        & .practice-footer{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            height: 15%;
+            width: 90%;
+            & svg{
+                stroke: rgb(146, 146, 146);
+            }
+
+            .practice-btn{
+                width: max-content;
+                height: 100%;
+                padding-inline: 3%;
+                border-radius: 10px;
+                background-color: var(--gray-color);
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                gap: 10px;
+                font-size: 1rem;
+                transition: background-color 0.3s ease;
+
+                & svg{
+                    width: 30px;
+                    height: 30px;
+                    transition: transform 0.3s ease, stroke 0.3s ease;
+                }
+            }
+
+            .practice-btn:hover{
+                background-color: var(--light-blue);
+                color: var(--dark-blue);
+
+                & svg{
+                    transform: rotate(360deg);
+                    stroke: var(--dark-blue);
+                }
+        }
+        }
+
+    }
+    & .practice:hover{
+        transform: translateZ(10px);
+    }
+}
+
 .footer {
     text-align: center;
     padding: 10px 0;
-    background: #333;
     color: white;
+    background-color: var(--dark-blue);
     margin-top: 20px;
+}
+
+@keyframes show {
+    from{
+        transform: translateY(1rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 #integrantes{
@@ -442,5 +573,5 @@ header{
 }
 
 #dropdown-row{
-    transition: transform 0.3s;
+    transition: transform 0.1s;
 }
