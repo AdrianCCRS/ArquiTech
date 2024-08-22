@@ -1,9 +1,9 @@
 # ArquiTech [Equipo 1]
 ## Integrantes
-- **Nombre Completo 1** - [Enlace al perfil de GitHub/GitLab]
-- **Nombre Completo 2** - [Enlace al perfil de GitHub/GitLab]
-- **Nombre Completo 3** - [Enlace al perfil de GitHub/GitLab]
-- **Nombre Completo 4** - [Enlace al perfil de GitHub/GitLab]
+- **Yeison Adrian Caceres Torres** - [https://adrianccrs.github.io/ArquiTech/index.html#adrian]
+- **Daniel Sebastian Badillo Neira** - [https://adrianccrs.github.io/ArquiTech/index.html#sebastian]
+- **Leider Joanny Esteban Lozano** - [https://adrianccrs.github.io/ArquiTech/index.html#leider]
+- **Andres Felipe Avella Rubiano** - [https://adrianccrs.github.io/ArquiTech/index.html#andres]
 
 # Pácticas
 

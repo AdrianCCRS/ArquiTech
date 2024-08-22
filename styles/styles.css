@@ -465,7 +465,7 @@ header{
     perspective: 700px;
     opacity: 0;
     animation: show 1s linear forwards;
-    animation-timeline: view();
+    animation-timeline: scroll();
     animation-iteration-count: 1;
     animation-range: entry;
 
