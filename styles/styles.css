@@ -458,7 +458,7 @@ header{
     min-height: 50vw;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(420px, 1fr));
     grid-auto-flow: row dense;
     grid-auto-columns: 1fr;
     gap: 15px;
@@ -474,7 +474,7 @@ header{
         background-color: var(--dark-color);
         outline: var(--dark-blue) solid 1px;
         max-width: max-content;
-        max-height: min-content;
+        height: auto;
         border-radius: 10px;
         transform-style: preserve-3d;
         transition: transform 0.3s ease;
@@ -494,15 +494,14 @@ header{
             color: rgb(146, 146, 146);
             font-size: 1rem;
             padding: 10px;
-            max-height: 55%;
-            min-height: 55%;
+
         }
 
         & .practice-footer{
             display: flex;
             justify-content: end;
             align-items: center;
-            height: 15%;
+            min-height: 12%;
             width: 90%;
             & svg{
                 stroke: rgb(146, 146, 146);
