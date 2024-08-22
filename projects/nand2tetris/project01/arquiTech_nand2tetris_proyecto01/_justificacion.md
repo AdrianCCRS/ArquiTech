@@ -10,6 +10,10 @@ El objetivo de la primera parte de la práctica es conocernos con nuestros compa
 **2.** ¿Qué otras herramientas similares a Nand2Tetris existen? (De mínimo dos ejemplos)
 **Rta:** NandGames (https://nandgame.com) y logisim (https://es.wikipedia.org/wiki/Logisim)
 
+## Código de la práctica
+
+Todos los archivos `.hdl` están en: [https://github.com/AdrianCCRS/ArquiTech/tree/main/projects/nand2tetris/project01/arquiTech_nand2tetris_proyecto01]
+
 ## Compuertas realizadas
 - `Not.hdl`: Para realizar la compuerta not a partir de una _nand_ simplemente hay que hacer que una de las entradas de sea siempre 1 (o **true**), por lo que la salida de la compuerta será la negación de la entrada, así:
 
