@@ -1,12 +1,3 @@
-# ArquiTech [Equipo 1]
-## Integrantes
-- **Nombre Completo 1** - [Enlace al perfil de GitHub/GitLab]
-- **Nombre Completo 2** - [Enlace al perfil de GitHub/GitLab]
-- **Nombre Completo 3** - [Enlace al perfil de GitHub/GitLab]
-- **Nombre Completo 4** - [Enlace al perfil de GitHub/GitLab]
-
-# Pácticas
-
 ## Práctica 01: Conociendo nustros compañeros e instalando y reconociendo las principales características de Nand2Tetris
 
 ### Descripción

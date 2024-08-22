@@ -422,6 +422,7 @@ header{
 
             & svg{
                 transition: scale 0.3s ease, stroke 0.3s ease;
+                stroke: #fff;
             }
 
             & svg:hover{
@@ -471,8 +472,7 @@ header{
 
     & .practice {
         background-color: var(--dark-color);
-        outline: var(--dark-color) solid 1px;
-        border: var(--dark-blue) solid 1px;
+        outline: var(--dark-blue) solid 1px;
         max-width: max-content;
         max-height: min-content;
         border-radius: 10px;
@@ -481,15 +481,13 @@ header{
         display: flex;
         flex-direction: column;
         align-items: center;
-        box-shadow: 2px 2px 15px 0 rgba(0, 132, 255, 0.192);
 
         & h2{
             color: white;
             font-size: 2rem;
             width: 100%;
             text-align: center;
-            background-color: var(--dark-blue);
-            border-radius: 10px 10px 0 0;
+
         }
 
         & p{
@@ -544,6 +542,8 @@ header{
     }
     & .practice:hover{
         transform: translateZ(10px);
+        border-bottom: var(--light-blue) solid 3px;
+        border-right: var(--light-blue) solid 3px;
     }
 }
 
