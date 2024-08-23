@@ -4,6 +4,7 @@
 - **Daniel Sebastian Badillo Neira** - [https://adrianccrs.github.io/ArquiTech/index.html#sebastian]
 - **Leider Joanny Esteban Lozano** - [https://adrianccrs.github.io/ArquiTech/index.html#leider]
 - **Andres Felipe Avella Rubiano** - [https://adrianccrs.github.io/ArquiTech/index.html#andres]
+- **Miguel Ángel Angulo Duarte** - [https://adrianccrs.github.io/ArquiTech/index.html#Miguel]
 
 # Pácticas
 
