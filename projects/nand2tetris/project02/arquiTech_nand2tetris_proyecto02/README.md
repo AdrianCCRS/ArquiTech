@@ -1,4 +1,17 @@
 # Explicación del Proceso en los Códigos
+# Descripción General
+
+Este proyecto implementa varios componentes fundamentales para el desarrollo de una computadora desde sus elementos básicos, siguiendo el enfoque de *nand2tetris*. Cada componente cumple una función esencial en la construcción de un sistema capaz de realizar operaciones lógicas y aritméticas. Estos componentes son implementados en Hardware Description Language (HDL) y son la base para construir una arquitectura funcional.
+
+Los principales módulos implementados incluyen:
+
+- **HalfAdder.hdl**: Un sumador básico que maneja la suma de dos bits.
+- **FullAdder.hdl**: Un sumador completo que maneja la suma de tres bits, incluyendo el acarreo.
+- **Add16.hdl**: Un sumador que realiza la suma de dos números de 16 bits, encadenando sumadores completos.
+- **Inc16.hdl**: Un circuito que incrementa en 1 un número de 16 bits.
+- **ALU.hdl**: Una Unidad Aritmética Lógica que realiza una variedad de operaciones aritméticas y lógicas sobre entradas de 16 bits, controlada por varias señales de control.
+
+Cada uno de estos componentes es clave para el funcionamiento de una arquitectura de procesador, permitiendo realizar desde sumas básicas hasta operaciones lógicas complejas.
 
 ## 1. HalfAdder.hdl
 El *Half Adder* es el componente más básico de un sumador binario. Su función es sumar dos bits (`a` y `b`) y generar dos salidas: `sum` (el bit menos significativo de la suma) y `carry` (el bit de acarreo si la suma es mayor que 1). El proceso se logra mediante dos compuertas lógicas:
