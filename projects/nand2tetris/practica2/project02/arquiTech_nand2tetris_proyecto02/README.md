@@ -111,16 +111,3 @@ La *ALU (Arithmetic Logic Unit)* es un componente más complejo que realiza una 
 5. **Cálculo de Señales de Estado**:
    - **zr**: Si el resultado final (`out`) es igual a `0`, la señal `zr` se pone a `1`. Esto se hace para indicar que el resultado es cero.
    - **ng**: Si el resultado final es negativo (basado en el bit más significativo de `out`), la señal `ng` se pone a `1`, indicando un resultado negativo.
-
----
-
-# Preguntas de la práctica
-1. ¿Cuál es el objetivo de cada uno de esos proyectos con sus palabras y describa que debe hacer para desarrollarlo?
-Rta: El objetivo de este proyecto es crear componentes básicos de operaciones aritméticas y lógicas, utilizados en una computadora. El proyecto implica construir circuitos como sumadores y comparadores, esenciales para realizar cálculos en hardware.
-Para desarrollarlo, se deben diseñar y probar puertas lógicas y combinaciones de ellas para implementar funciones aritméticas. Las simulaciones permitirán verificar si los circuitos funcionan correctamente.
-2. Explique las principales diferencias entre la lógica aritmética y la lógica secuencial.
-- **Lógica Aritmética:**  
-  Se enfoca en realizar operaciones matemáticas y lógicas inmediatas, como suma, resta, comparación o funciones booleanas. La salida depende únicamente de las entradas actuales, es decir, es combinacional y no guarda estado previo.
-- **Lógica Secuencial:**  
-  Introduce el concepto de memoria, permitiendo que los circuitos guarden información y dependan tanto de las entradas actuales como del estado anterior. Esto permite implementar componentes de memoria como registros y flip-flops, esenciales en la gestión de datos y la ejecución secuencial.
-
