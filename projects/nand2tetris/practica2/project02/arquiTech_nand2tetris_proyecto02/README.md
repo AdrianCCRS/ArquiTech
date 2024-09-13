@@ -123,16 +123,4 @@ Para desarrollarlo, se deben diseñar y probar puertas lógicas y combinaciones 
   Se enfoca en realizar operaciones matemáticas y lógicas inmediatas, como suma, resta, comparación o funciones booleanas. La salida depende únicamente de las entradas actuales, es decir, es combinacional y no guarda estado previo.
 - **Lógica Secuencial:**  
   Introduce el concepto de memoria, permitiendo que los circuitos guarden información y dependan tanto de las entradas actuales como del estado anterior. Esto permite implementar componentes de memoria como registros y flip-flops, esenciales en la gestión de datos y la ejecución secuencial.
-# Bonus
-¿Qué tipo de unidades aritmético lógicas existen?
-- Las Unidades Aritmético Lógicas (ALU) son componentes esenciales en una CPU que se encargan de realizar operaciones aritméticas y lógicas. Los tipos más comunes de ALU son:
-
-1. **ALU de propósito general:**  
-   Capaz de realizar una amplia gama de operaciones, como suma, resta, multiplicación, operaciones lógicas (AND, OR, NOT) y comparaciones. Estas ALU están presentes en la mayoría de los procesadores modernos.
-
-2. **ALU de propósito específico:**  
-   Diseñada para tareas específicas, como realizar solo ciertas operaciones aritméticas o lógicas. Son más eficientes en términos de rendimiento y consumo de energía para su tarea designada.
-
-3. **ALU de punto flotante:**  
-   Especializada en realizar operaciones matemáticas con números decimales (punto flotante), esenciales para cálculos precisos en gráficos, simulaciones científicas, y otras aplicaciones que requieren alta precisión numérica.
 
