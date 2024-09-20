@@ -60,3 +60,13 @@ Se deja el siguiente esquema en el cual se ilustra el cómo entendimos que funci
 ---
 
 ## 2. Fill.asm
+Se nos pide hacer un código que reciba como entrada si alguna tecla está presionada, y a partir de esa condición pinte la pantalla de negro si es que se cumple. Es un ejercicio retante y la solución puede volverse enredada de explicar, por lo que como equipo hemos decidido complementar nuestra explicación con un diagrama de flujo del problema que se adjunta más abajo. Pero primero debemos comprender algunas cosas de los inputs del problema:
+
+- En este lenguaje se manejan lo que en la documentación llaman _**I/O pointers**_, lo cual corresponde a los símbolos de ``SCREEN`` (pantalla) y ``KBD`` (teclado). El símbolo de ``SCREEN`` corresponde a las direcciones de RAM desde la 16384 hasta la 24575, esto debido a que esta pantalla ocupa 256 filas de 512 pixeles cada una y ahí podemos despejar con cálculos. En cuanto al símbolo ``KBD``, hace referencia a la dirección 24576.
+
+  Estos dispositivos interactúan con la computadora a través de los _"memory maps"_, que se traduce como mapeos de memoria. Esto quiere decir que para nuestro caso, podemos dibuajar pixeles en la pantalla escribiendo valores binarios en los segmentos de memoria asociados con la pantalla.
+
+Para expresar con claridad el algoritmo que seguimos en el código para resolver el problema, dejamos el siguiente diagrama de flujo, para que se entienda de una manera más simplificada.
+<center>
+  <img src="../../../../../src/project4_img/flowchart.png" alt="Diagrama de flujo" width="800"/>
+</center>
