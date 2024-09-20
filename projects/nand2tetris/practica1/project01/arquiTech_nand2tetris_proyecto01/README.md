@@ -17,27 +17,27 @@ Todos los archivos `.hdl` están en: [https://github.com/AdrianCCRS/ArquiTech/tr
 ## Compuertas realizadas
 - `Not.hdl`: Para realizar la compuerta not a partir de una _nand_ simplemente hay que hacer que una de las entradas de sea siempre 1 (o **true**), por lo que la salida de la compuerta será la negación de la entrada, así:
 
-![compuerta not](../../../../src/project1_img/not.png)
+![compuerta not](../../../../../src/project1_img/not.png)
 
 - `And.hdl`: Para la compuerta _and_ es tan sencillo como utilizar la compuerta _nand_ y luego negarla.
 
-![compuerta and](../../../../src/project1_img/and.png)
+![compuerta and](../../../../../src/project1_img/and.png)
 
 - `Or.hdl`: Para poder hacer la compuerta _or_ lo que hicimos fue negar las entradas de la compuerta _nand_, de esta manera nos aseguramos de que la única forma de que la salida sea 0 o _false_ es ambas entradas sean 0 o _false_, ya que las negará, entrará 1 y 1, por tanto la salida será 0; así:
 
-![compuerta or](../../../../src/project1_img/or.png)
+![compuerta or](../../../../../src/project1_img/or.png)
 
 -`Xor.hdl`: Para la compuerta _xor_ (or exclusivo) nos vamos directamenta a su construccion con compuertas lógicas básicas, en donde utilizamos dos compuertas _and_ donde los inputs son alguno de los inputs iniciales y la negación del otro; luego, las salidas de esas compuertas _and_ entran a una _or_ y la salida de esa, es nuestra salida final, así:
 
-![compuerta xor](../../../../src/project1_img/xor.png)
+![compuerta xor](../../../../../src/project1_img/xor.png)
 
 -`Mux.hdl`: Para el multiplexor **(2 a 1)**, también nos vamos hacia su definición, en donde usamos dos compuertas _and_ y una _not_ que servirá para negar el selector, lo conectamos de la siguiente manera:
 
-![multiplexor](../../../../src/project1_img/mux.png)
+![multiplexor](../../../../../src/project1_img/mux.png)
 
 -`DMux.hdl`: Para el demultiplexor **(1 a 2)** usamos tambien dos compuertas _and_ y una _not_ pero de maneras distintas, pues ya no se usa el _not_ en el selector sino en el input, así:
 
-![demultiplexor](../../../../src/project1_img/dmux.png)
+![demultiplexor](../../../../../src/project1_img/dmux.png)
 
 - `Not16.hdl, And16.hdl, Or16.hdl, Mux16.hdl`: Estas son las mismas compuertas pero para inputs de 16 bits, por lo que lo unico que hay que hacer es aplicar cada compuerta a cada uno de los 16 bits de ambos inputs y ya obtenemos el resultado correcto.
 
