@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assembler - ArquiTech</title>
+    <style>
+
+        :root{
+            color: white;
+        }
+
+        body{
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container{
+            padding: 20px;
+            border: 1px solid #35b5cc;
+            border-radius: 10px;
+            background-color: rgb(16 16 16 / 100%);
+            max-width: 70%;
+            display: flex;
+            flex-direction: row;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+ 
+
+            input{
+                margin: 10px;
+                padding: 10px;
+                label{
+                    background-color: aqua;
+                    padding: 10px;
+                    border-radius: 10px;
+                }
+            }
+
+            pre{
+                max-width: 100%;
+                max-height: 25rem;
+                font-size: 2rem;
+                overflow-y: auto;
+                display: flex;
+                text-wrap: wrap;
+                word-break: break-all;
+            }
+
+            .btn{
+                padding: 10px;
+                margin: 10px;
+                border: 0;
+                border-radius: 5px;
+                background-color: #35b5cc;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            .btn:hover{
+                background-color: #166d7c;
+            }
+
+            .boxed-text{
+                min-width: 50px;
+                min-height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Cargue aquí su archivo</h1>
+
+    <div class="container">
+        <div class="form">
+            <label for="file">Seleccione un archivo:</label>
+            <input style="cursor: pointer;" type="file" accept=".asm" name="file" id="file" title="Seleccione un archivo para cargar" placeholder="Seleccione un archivo" oninput="onSelectFile(event)">
+            <input class="btn" type="submit" value="Traducir" onclick="saveOutput()">
+            <h3>Traducción a binario:</h3>
+            <pre class="boxed-text">Seleccione un archivo...</pre>
+        </div>
+    </div>
+</body>
+
+<script src="./assembler.js"></script>
+</html>
