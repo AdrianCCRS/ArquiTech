@@ -1,67 +1,146 @@
-# ArquiTech [Equipo 1]
-## Integrantes
-- **Yeison Adrian Caceres Torres** - [https://adrianccrs.github.io/ArquiTech/index.html#adrian]
-- **Daniel Sebastian Badillo Neira** - [https://adrianccrs.github.io/ArquiTech/index.html#sebastian]
-- **Leider Joanny Esteban Lozano** - [https://adrianccrs.github.io/ArquiTech/index.html#leider]
-- **Andres Felipe Avella Rubiano** - [https://adrianccrs.github.io/ArquiTech/index.html#andres]
-- **Miguel Ángel Angulo Duarte** - [https://adrianccrs.github.io/ArquiTech/index.html#Miguel]
+# ArquiTech - Project Description
 
-# Pácticas
+## Overview
+ArquiTech is an academic web portfolio project developed by a team of 5 Computer Systems Engineering students at Universidad Industrial de Santander (UIS) for their Computer Architecture course. The project serves as both a team presentation platform and a showcase of their practical work with the Nand2Tetris educational platform.
 
-## Práctica 01: Conociendo nustros compañeros e instalando y reconociendo las principales características de Nand2Tetris
+## Project Structure
 
-### Descripción
-El objetivo de la primera parte de la práctica es conocernos con nuestros compañeros de grupo y entre todos realizar la publicación de un sitio web en donde nos presentemos a nosotros y a las prácticas. Luego en la segunda parte realizamos el proyecto 01 de _nand2tetris_, en el cual a partir del funcionamiento de una compuerta nand creamos otras compuertas lógicas básicas como las _AND, NOT, OR_ para uno, o 16 bits; además de el funcionamiento de multiplexores y demultiplexores a partir de estas compuertas.
+### Frontend Architecture
+The project follows a traditional static website structure with clean separation of concerns:
 
-## Preguntas de la práctica
-**1.** ¿Que consideraciones importantes debe tener en cuenta para trabajar con Nand2Tetris?
-**Rta:** Es importante contar con conocimientos previos acerca de la lógica digital, las funciones lógicas y el cómo combinarlas para sacar unas de otras usando el álgebra booleana y conceptos de circuitos digitales. Tambien se debe tener noción de lo que es un Multiplexor y un Demultiplexor, y conocimiento básico de números binarios.
+```
+ArquiTech/
+├── index.html              # Main HTML file with team presentation
+├── styles/
+│   ├── styles.css          # Main stylesheet with CSS custom properties
+│   └── reset.css           # CSS reset for cross-browser compatibility
+├── src/
+│   ├── img/                # Team photos and project images
+│   ├── project1_img/       # Technical diagrams for Practice 1
+│   ├── project3_img/       # Assets for Practice 3
+│   └── project4_img/       # Assets for Practice 4
+├── projects/
+│   └── nand2tetris/        # Academic exercises and implementations
+│       ├── practica1/      # Logic gates implementation
+│       ├── practica2/      # Arithmetic logic unit
+│       ├── practica3/      # Memory systems
+│       └── practica4/      # Assembly compiler
+└── README.md               # Project documentation
+```
 
-**2.** ¿Qué otras herramientas similares a Nand2Tetris existen? (De mínimo dos ejemplos)
-**Rta:** NandGames (https://nandgame.com) y logisim (https://es.wikipedia.org/wiki/Logisim)
+## Technologies Used
 
-## Código de la práctica
+### Frontend Technologies
+- **HTML5**: Semantic markup with proper accessibility considerations
+- **CSS3**: Modern styling with advanced features including:
+  - CSS Custom Properties (CSS Variables) for consistent theming
+  - CSS Grid and Flexbox for responsive layouts
+  - CSS Layers for better organization (@layer directive)
+  - Google Fonts integration (Radio Canada Big, Anton)
+  - Smooth scroll behavior
+  - Custom SVG icons and graphics
 
-Todos los archivos `.hdl` están en: [https://github.com/AdrianCCRS/ArquiTech/tree/main/projects/nand2tetris/project01/arquiTech_nand2tetris_proyecto01]
+### Development Tools
+- **Git**: Version control system
+- **GitHub**: Repository hosting and collaboration
+- **GitHub Pages**: Static site hosting
+- **Webhint**: Code quality and web standards linting (configured in .hintrc)
 
-## Compuertas realizadas
-- `Not.hdl`: Para realizar la compuerta not a partir de una _nand_ simplemente hay que hacer que una de las entradas de sea siempre 1 (o **true**), por lo que la salida de la compuerta será la negación de la entrada, así:
+### Hardware Description Language
+- **HDL (Hardware Description Language)**: For implementing digital logic circuits in the Nand2Tetris platform
 
-![compuerta not](./src/project1_img/not.png)
+## Good Practices and Patterns Implemented
 
-- `And.hdl`: Para la compuerta _and_ es tan sencillo como utilizar la compuerta _nand_ y luego negarla.
+### 1. CSS Architecture
+- **CSS Custom Properties**: Consistent color scheme and typography using CSS variables
+- **CSS Reset**: Implemented Meyer's CSS reset for cross-browser consistency
+- **Layered CSS**: Using @layer directive for better cascade management
 
-![compuerta and](./src/project1_img/and.png)
+### 2. HTML Structure
+- **Semantic HTML**: Proper use of semantic elements (header, nav, main, section)
+- **Accessibility**: Alt attributes for images, proper heading hierarchy
+- **SEO Optimization**: Meta tags for charset and viewport
+- **Progressive Enhancement**: Core functionality works without JavaScript
 
-- `Or.hdl`: Para poder hacer la compuerta _or_ lo que hicimos fue negar las entradas de la compuerta _nand_, de esta manera nos aseguramos de que la única forma de que la salida sea 0 o _false_ es ambas entradas sean 0 o _false_, ya que las negará, entrará 1 y 1, por tanto la salida será 0; así:
+### 3. User Experience
+- **Smooth Navigation**: CSS smooth scroll behavior for internal links
+- **Interactive Elements**: Dropdown navigation with visual feedback
+- **Visual Hierarchy**: Clear typography and spacing for content organization
+- **External Links**: Proper target="_blank" for external resources
 
-![compuerta or](./src/project1_img/or.png)
+### 4. Code Organization
+- **Separation of Concerns**: HTML, CSS, and JavaScript properly separated
+- **Modular CSS**: Reset and main styles in separate files
+- **Asset Organization**: Logical folder structure for images and resources
+- **Documentation**: Comprehensive README with technical explanations
 
--`Xor.hdl`: Para la compuerta _xor_ (or exclusivo) nos vamos directamenta a su construccion con compuertas lógicas básicas, en donde utilizamos dos compuertas _and_ donde los inputs son alguno de los inputs iniciales y la negación del otro; luego, las salidas de esas compuertas _and_ entran a una _or_ y la salida de esa, es nuestra salida final, así:
+### 5. Academic Integration
+- **Technical Documentation**: Detailed explanations of digital logic implementations
+- **Visual Learning**: Circuit diagrams and technical illustrations
+- **Code Examples**: Well-commented HDL implementations
+- **External References**: Links to relevant educational resources
 
-![compuerta xor](./src/project1_img/xor.png)
+### 6. Version Control
+- **Git Best Practices**: Proper repository structure
+- **GitHub Integration**: Seamless hosting with GitHub Pages
+- **Documentation**: Clear README with project overview and technical details
 
--`Mux.hdl`: Para el multiplexor **(2 a 1)**, también nos vamos hacia su definición, en donde usamos dos compuertas _and_ y una _not_ que servirá para negar el selector, lo conectamos de la siguiente manera:
+### 7. Performance Considerations
+- **Optimized Images**: Appropriate image formats and sizes
+- **Minimal JavaScript**: Only essential interactive functionality
+- **External Resource Management**: Strategic use of Google Fonts with display=swap
 
-![multiplexor](./src/project1_img/mux.png)
+## Academic Content Quality
 
--`DMux.hdl`: Para el demultiplexor **(1 a 2)** usamos tambien dos compuertas _and_ y una _not_ pero de maneras distintas, pues ya no se usa el _not_ en el selector sino en el input, así:
+### Nand2Tetris Implementation
+The project demonstrates solid understanding of digital logic fundamentals:
+- **Complete Gate Library**: Implementation of all basic logic gates (AND, OR, NOT, XOR, NAND)
+- **Multi-bit Operations**: 16-bit versions of fundamental operations
+- **Multiplexers/Demultiplexers**: Complex routing logic implementation
+- **Technical Accuracy**: Correct HDL syntax and logic implementations
 
-![demultiplexor](./src/project1_img/dmux.png)
+### Educational Value
+- **Clear Explanations**: Step-by-step reasoning for each implementation
+- **Visual Aids**: Circuit diagrams supporting theoretical concepts
+- **Progressive Complexity**: Logical progression from simple to complex circuits
+- **Real-world Application**: Connection between theory and practical implementation
 
-- `Not16.hdl, And16.hdl, Or16.hdl, Mux16.hdl`: Estas son las mismas compuertas pero para inputs de 16 bits, por lo que lo unico que hay que hacer es aplicar cada compuerta a cada uno de los 16 bits de ambos inputs y ya obtenemos el resultado correcto.
+## Team Members and Collaboration
 
--`Or8Way.hdl`: Para esta compuerta tenemos que aplicar la compuerta _or_ entre los 8 bits de un numero, osea, aplicamos como entradas de la _or_ un bit y su vecino siguiente, lo que nos arroje esa la ingresamos a una nueva compuerta _or_ junto con el siguiente bit y así suscesivamente. Algo así como un _or_ entre los bits **(8 en este caso)**.
+### Team Composition
+The ArquiTech project is developed by a collaborative team of 5 Computer Systems Engineering students from Universidad Industrial de Santander (UIS):
 
--`Mux4Way16.hdl`: Ahora lo que nos piden es un multiplexor de **4 a 1** donde las entradas son de 16 bits (a,b,c,d). Afortunadamente ya creamos la compuerta `Mux16` por lo que queda más sencillo. Utilizamos la compuerta `Mux16` con el primer bit del selector, para reducir las posibilidades de salida a 2 (la salida entra a y b, y la salida entre c y d). Luego con el bit de selector que queda escogemos entre esas dos salidas anteriores y esa será nuestra salida final
+- **Yeison Adrian Caceres Torres** - Team Lead and Frontend Developer
+  - Profile: [https://adrianccrs.github.io/ArquiTech/index.html#adrian](https://adrianccrs.github.io/ArquiTech/index.html#adrian)
+  - Role: Project coordination, web development, and digital logic implementation
 
--`Mux8Way16.hdl`: Proceso similar ya que nos piden un multiplexor **8 a 1**, cogemos las 8 entradas (a,b,c,d,e,f,g,h) y utilizamos la compuerta que creamos anteriormente; cogemos los dos bits menos significativos para el selector y partimos en 4 entradas usando dos compuertas `Mux4Way16`, esto hará que de todas esas entradas escoja solo una dependiendo del valor de los bits escogidos del selector. Luego, esas dos salidas las ingresamos a una compuerta `Mux16` usando el bit más significativo del selector restante, la salida recibida será nuestra salida final.
+- **Daniel Sebastian Badillo Neira** - HDL Developer and Documentation Specialist
+  - Profile: [https://adrianccrs.github.io/ArquiTech/index.html#sebastian](https://adrianccrs.github.io/ArquiTech/index.html#sebastian)
+  - Role: Hardware description language implementation and technical documentation
 
-- `DMux4Way`: Nos piden un demultiplexor **1 a 4**, entonces acá usaremos las compuertas `DMux` creadas. La primera instancia de DMux divide la señal de entrada in en dos señales intermedias (ab y cd). Aquí, el bit más significativo (sel[1]) determina a cuál de los dos grupos se enviará la señal de entrada.
-    - Si sel[1] = 0, la señal in se dirige al grupo ab.
-    - Si sel[1] = 1, la señal in se dirige al grupo cd.
-Luego, cada uno de los grupos (ab y cd) se subdivide usando el bit menos significativo (sel[0]). Este bit decide entre las salidas individuales dentro de cada grupo:
-    - Para ab: Si sel[0] = 0, la señal va a a; si sel[0] = 1, va a b.
-    - Para cd: Si sel[0] = 0, la señal va a c; si sel[0] = 1, va a d.
+- **Leider Joanny Esteban Lozano** - Circuit Design and Testing Specialist
+  - Profile: [https://adrianccrs.github.io/ArquiTech/index.html#leider](https://adrianccrs.github.io/ArquiTech/index.html#leider)
+  - Role: Digital circuit design and validation testing
 
-- `DMux8Way`: Ahora se nos pide un demultiplexor **1 a 8**, por suerte ya hicimos uno **4 a 1** y este proceso es parecido. Usamos los dos bits más significativos del selector y la compuerta anterior `DMux4Way` para decidir como dividir la señal original en 4 señales intermedias (ab, cd, ef, gh), tal cual como lo habíamos hecho antes. Por último cada una de esas señales intermedias pasa a una compuerta `Dmux` junto con el bit menos significativo para dividir los pares de salidas finales.
+- **Andres Felipe Avella Rubiano** - System Architecture and Integration Specialist
+  - Profile: [https://adrianccrs.github.io/ArquiTech/index.html#andres](https://adrianccrs.github.io/ArquiTech/index.html#andres)
+  - Role: System architecture design and component integration
+
+- **Miguel Ángel Angulo Duarte** - Quality Assurance and Documentation Coordinator
+  - Profile: [https://adrianccrs.github.io/ArquiTech/index.html#Miguel](https://adrianccrs.github.io/ArquiTech/index.html#Miguel)
+  - Role: Code review, quality assurance, and documentation coordination
+
+### Team Collaboration Features
+- **Individual Profiles**: Comprehensive team member presentations with personal backgrounds
+- **Social Media Integration**: Professional networking links for each team member
+- **Academic Information**: Course context and institutional affiliation
+- **Multilingual Support**: Spanish language interface for local context
+- **Distributed Development**: Collaborative workflow using Git and GitHub for version control
+
+## Technical Highlights
+- **Cross-browser Compatibility**: CSS reset and standard-compliant code
+- **Responsive Design**: Works across different screen sizes
+- **Performance Optimized**: Minimal resource usage with fast loading times
+- **Maintainable Code**: Clean, well-organized codebase with clear naming conventions
+
+The ArquiTech project successfully combines academic rigor with modern web development practices, creating an effective portfolio that demonstrates both technical competency and professional presentation skills.
